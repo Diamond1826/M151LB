@@ -21,6 +21,8 @@ Route::get('/registry','PagesController@registry');
 
 Route::get('/login', 'PagesController@login');
 
+Route::get('/students', 'StudentsController@index');
+
 Auth::routes();
 
 Route::get('/logout', function ()

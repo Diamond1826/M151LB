@@ -33,7 +33,7 @@
                 <ul class="nav navbar-nav">
                     <li class="{{ Request::is('/') ? 'active' : '' }}"><a href="{{ url('/') }}">Home</a></li>
                     <li class="{{ Request::is('contact') ? 'active' : '' }}"><a href="{{ url('contact') }}">Contact</a></li>
-                    <li><a href="#">Page 2</a></li>
+                    <li class="{{ Request::is('students') ? 'active' : '' }}"><a href="{{ url('/students') }}">Students</a></li>
                     <li><a href="#">Page 3</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
