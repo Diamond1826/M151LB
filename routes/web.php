@@ -23,7 +23,7 @@ Route::get('/login', 'PagesController@login');
 
 Auth::routes();
 
-Route::get('/logout', function (
+Route::get('/logout', function ()
 {
 	Auth::logout();
 	return redirect('/');
