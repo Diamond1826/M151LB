@@ -5,10 +5,9 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+                <div class="panel-heading">Student's List</div>
 
                 <div class="panel-body">
-                    You are logged in!<br>
                     <div class="table-responsive">
                         <table class="table">
                             <tr>
