@@ -5,24 +5,18 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading">Student's List</div>
+                <div class="panel-heading">Class List</div>
 
                 <div class="panel-body">
                     <div class="table-responsive">
                         <table class="table table-hover">
                             <tr>
-                                <th>Studenten ID</th>
-                                <th>Firstname</th>
-                                <th>Lastname</th>
-                                <th>Street</th>
-                                <th>PLZ</th>
-                                <th>City</th>
-                                <th>E-Mail</th>
                                 <th>Class ID</th>
+                                <th>Classname</th>
                             </tr>
                             <?php 
-                                foreach ($students as $student) {
-                                    echo '<tr class="clickable-row" data-href="/"><td>',$student->studentsId,'</td><td>',$student->firstname,'</td><td>',$student->lastname,'</td><td>',$student->street,'</td><td>',$student->plz,'</td><td>'.$student->city,'</td><td>',$student->email,'</td><td>',$student->name,'</td></tr>';
+                                foreach ($classes as $class) {
+                                    echo '<tr class="clickable-row" data-href="/"><td>',$class->classId,'</td><td>',$class->name,'</td></tr>';
                                 }
                             ?>
                         </table>

@@ -12,6 +12,7 @@ class StudentsTableSeeder extends Seeder
     public function run()
     {
        DB::table('students')->insert([
+            'classId' => 1,
             'firstname' => str_random(10),
             'lastname' => str_random(10),
             'email' => str_random(10).'@gmail.com',

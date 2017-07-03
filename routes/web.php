@@ -23,6 +23,8 @@ Route::get('/login', 'PagesController@login');
 
 Route::get('/students', 'StudentsController@index');
 
+Route::get('/classes', 'StudentsController@classes');
+
 Auth::routes();
 
 Route::get('/logout', function ()

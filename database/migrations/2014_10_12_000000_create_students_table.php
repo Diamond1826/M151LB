@@ -14,13 +14,15 @@ class CreateStudentsTable extends Migration
     public function up()
     {
         Schema::create('students', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('studentsId');
+            $table->integer('classId');
             $table->string('firstname');
             $table->string('lastname');
             $table->string('email');
             $table->string('street');
             $table->string('plz');
             $table->string('city');
+            $table->foreign('classId')->references('classId')->on('classes');
         });
     }
 

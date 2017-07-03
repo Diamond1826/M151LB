@@ -34,7 +34,7 @@
                     <li class="{{ Request::is('/') ? 'active' : '' }}"><a href="{{ url('/') }}">Home</a></li>
                     <li class="{{ Request::is('contact') ? 'active' : '' }}"><a href="{{ url('contact') }}">Contact</a></li>
                     <li class="{{ Request::is('students') ? 'active' : '' }}"><a href="{{ url('/students') }}">Students</a></li>
-                    <li><a href="#">Page 3</a></li>
+                    <li class="{{ Request::is('classes') ? 'active' : '' }}"><a href="{{ url('/classes') }}">Classes</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     @if (Auth::guest())
@@ -59,5 +59,12 @@
     @yield('content')
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $(".clickable-row").click(function() {
+                window.location = $(this).data("href");
+                });
+            });
+    </script>
 </body>
 </html>
