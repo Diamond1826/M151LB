@@ -6,7 +6,6 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Contact</div>
-
                 <div class="panel-body">
                     <div class="table-responsive">
                         <table class="table">

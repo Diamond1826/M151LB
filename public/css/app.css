@@ -6857,6 +6857,7 @@ button.list-group-item-danger.active:focus {
 }
 
 .panel-heading {
+  font-size: 22px;
   padding: 10px 15px;
   border-bottom: 1px solid transparent;
   border-top-right-radius: 3px;
