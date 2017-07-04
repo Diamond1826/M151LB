@@ -3,7 +3,7 @@
 @if(Auth::check())
 <div class="container">
     <div class="row">
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">Student's List</div>
                     <a class="btn btn-default btn-block" href="/newStudent">New Student</a>
@@ -11,14 +11,14 @@
                     <div class="table-responsive">
                         <table class="table table-hover">
                             <tr>
-                                <th>Studenten ID</th>
+                                <th>Student's ID</th>
                                 <th>Firstname</th>
                                 <th>Lastname</th>
                                 <th>Street</th>
-                                <th>PLZ</th>
+                                <th>Zipcode</th>
                                 <th>City</th>
                                 <th>E-Mail</th>
-                                <th>Class ID</th>
+                                <th>Class</th>
                             </tr>
                             
                             @foreach ($students as $student) 

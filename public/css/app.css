@@ -52,6 +52,12 @@ template {
   display: none;
 }
 
+#map {
+  height: 350px;
+  width: 100%;
+  margin-top: 10px;
+}
+
 a {
   background-color: transparent;
 }
@@ -6877,8 +6883,10 @@ button.list-group-item-danger.active:focus {
 }
 
 .panel-footer {
+  font-size: 22px;
   padding: 10px 15px;
-  background-color: #f5f5f5;
+  background-color: white;
+  /*background-color: #f5f5f5;*/
   border-top: 1px solid #d3e0e9;
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;

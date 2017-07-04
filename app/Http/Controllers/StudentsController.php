@@ -67,7 +67,17 @@ class StudentsController extends Controller
             $selectedStudent = $student;   
         }
 
-        return view('pages.editStudent', ['students' => $students, 'selectedStudent' => $selectedStudent]);
+        $studentClassId = $selectedStudent->classId;
+
+        $class = DB::select("SELECT * FROM classes WHERE classId = $studentClassId");
+
+        $selectedClassId;
+
+        foreach ($class as $selectedClass) {
+            $selectedClassId = $selectedClass->classId;
+        }
+
+        return view('pages.editStudent', ['selectedStudent' => $selectedStudent, 'classId' => $selectedClassId]);
     }  
 
     public function createStudent(Request $request)

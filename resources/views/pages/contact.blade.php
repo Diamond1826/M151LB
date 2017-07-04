@@ -8,12 +8,53 @@
                 <div class="panel-heading">Contact</div>
 
                 <div class="panel-body">
-                    You are logged in!
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                Contact Informations:
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>Name:</th>
+                                    <td>Schaufelberger Dimitrij</td>
+                                </tr>
+                                <tr>
+                                    <th>Adress:</th>
+                                    <td>St. Gallerstrasse 25<br>9400 Rorschach</td>
+                                </tr>
+                                <tr>
+                                    <th>E-Mail:</th>
+                                    <td>diamond1826@hotmail.com</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div> 
+                </div>
+                <div class="panel-footer">
+                    Location:
+                    <div id="map"></div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script>
+    function initMap() {
+        var location = {lat: 47.478238, lng: 9.485080};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 15,
+          center: location
+        });
+        var marker = new google.maps.Marker({
+          position: location,
+          map: map
+        });
+      }
+</script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBP9XGjwa6yemZn437vebzZK1HDk3l-Yok&callback=initMap">
+</script>
+
 @endif 
 @if(Auth::guest())
     <div class="row firstlog">

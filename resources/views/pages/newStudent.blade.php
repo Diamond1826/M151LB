@@ -45,10 +45,10 @@
                         </div>
                       </div>
                       <div class="form-group">
-                        {{ Form::label('classId', 'ClassID:', ['class' => 'control-label col-sm-2']) }}
+                        {{ Form::label('classId', 'Select Class:', ['class' => 'control-label col-sm-2']) }}
                         <div class="col-sm-10">
-                          {{ Form::text('classId', '', ['class' => 'form-control']) }}
-                        </div>
+                          {{ Form::select('classId', \App\Classes::all()->pluck('name', 'classId')->toArray(),null,['class'=>'form-control']) }}
+                        </div>                     
                       </div>
                       <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">

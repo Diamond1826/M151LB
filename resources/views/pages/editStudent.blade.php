@@ -46,9 +46,9 @@
                         </div>
                       </div>
                       <div class="form-group">
-                        {{ Form::label('classId', 'ClassID:', ['class' => 'control-label col-sm-2']) }}
+                        {{ Form::label('classId', 'Selected Class:', ['class' => 'control-label col-sm-2']) }}
                         <div class="col-sm-10">
-                          {{ Form::text('classId', $selectedStudent->classId, ['class' => 'form-control']) }}
+                          {{ Form::select('classId', [\App\Classes::all()->pluck('name', 'classId')->toArray()],$classId,['class'=>'form-control']) }}
                         </div>
                       </div>
                       <div class="form-group">
