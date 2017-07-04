@@ -44,7 +44,8 @@
                     @if (Auth::guest())
                     <li><a href="{{ route('register') }}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                     <li><a href="{{ route('login') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                    @else
+                    @endif
+                    @if (Auth::check())
                     <li><p class="navbar-text">Angemeldet als: <b>{{ Auth::user()->name }}</b></a></p></li>
                     <li>
                         <a href="{{ route('logout') }}" onclick="event.preventDefault();

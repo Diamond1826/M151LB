@@ -9,7 +9,7 @@
                     <a class="btn btn-default btn-block" href="/newClass">New Class</a>
                 <div class="panel-body">
                     <div class="table-responsive">
-                        <table class="table table-hover">
+                        <table class="table table-responsive table-hover">
                             <tr>
                                 <th>Class ID</th>
                                 <th>Classname</th>
@@ -31,7 +31,7 @@
 @if(Auth::guest())
     <div class="row firstlog">
       <div class="col-xs-12 col-sm-6 col-md-3 col-md-offset-5 col-lg-3 col-lg-offset-4 col-sm-offset-3 ">
-        <a href="{{ route('login') }}" class="btn btn-block btn-warning">Bitte zuerst Anmelden</a> 
+        <a href="{{ route('login') }}" class="btn btn-block btn-default" style="margin-top:100px;">Bitte zuerst Anmelden</a> 
       </div>
     </div>
     @endif 

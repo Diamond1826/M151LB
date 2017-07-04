@@ -9,7 +9,7 @@
                 <div class="panel-body">              
                     {{ Form::open(['url' => '/updateStudent', 'class' => 'form-horizontal']) }}
                       <div class="form-group">
-                        {{ Form::label('fistname', '', ['class' => 'control-label col-sm-2']) }}
+                        {{ Form::label('fistname', 'Firstname:', ['class' => 'control-label col-sm-2']) }}
                         <div class="col-sm-10">
                           {{ Form::text('firstname', $selectedStudent->firstname, ['class' => 'form-control']) }}
                           {{ Form::text('studentsId', $selectedStudent->studentsId, array('class' => 'form-control','style' => 'display: none;')) }}
@@ -54,6 +54,7 @@
                       <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                           {{ Form::submit('Save Changes', ['class' => 'btn btn-default']) }}
+                          <a href="/deleteStudent/{{ $selectedStudent->studentsId }}" class="btn btn-default">Delete Student</a>
                         </div>
                       </div>
                     {{ Form::close() }}
@@ -66,7 +67,7 @@
 @if(Auth::guest())
     <div class="row firstlog">
       <div class="col-xs-12 col-sm-6 col-md-3 col-md-offset-5 col-lg-3 col-lg-offset-4 col-sm-offset-3 ">
-        <a href="{{ route('login') }}" class="btn btn-block btn-warning">Bitte zuerst Anmelden</a> 
+        <a href="{{ route('login') }}" class="btn btn-block btn-default" style="margin-top:100px;">Bitte zuerst Anmelden</a> 
       </div>
     </div>
     @endif 

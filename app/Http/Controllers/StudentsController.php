@@ -39,7 +39,7 @@ class StudentsController extends Controller
                                 WHERE students.classId = classes.classId 
                                 AND students.classId = $classId");
 
-        $class = DB::select("SELECT name from classes where classId = $classId");
+        $class = DB::select("SELECT classId, name from classes where classId = $classId");
 
         $className;
 
@@ -127,6 +127,47 @@ class StudentsController extends Controller
         $class->name = $request ->input('name');
         $class->save();
 
+        return redirect()->action('StudentsController@classes');
+    }
+
+    public function deleteStudent($studentsId)
+    {
+        DB::delete('DELETE FROM students WHERE studentsId = ?', [$studentsId]);
+
+        return redirect()->action('StudentsController@index');
+    }
+
+    public function deleteClass($classId)
+    {
+        DB::delete('DELETE FROM classes WHERE classId = ?', [$classId]);
+
+        DB::select('UPDATE students SET classID = 5 WHERE classId = ?', [$classId]);
+
+        return redirect()->action('StudentsController@classes');
+    }
+
+    public function editClass($classId)
+    {
+        $classe = DB::select("SELECT * FROM classes WHERE classId = $classId");
+
+        $selectedClass;
+
+        foreach ($classe as $class) {
+            $selectedClass = $class;
+        }
+
+        return view('pages.editClass', ['selectedClass' => $selectedClass]);
+    }
+
+    public function updateClass(Request $request)
+    {
+        $classId = $request -> input('classId');
+        $name = $request -> input('name');
+        
+    DB::select("UPDATE classes SET 
+                 name = \"$name\" 
+                 WHERE classId = \"$classId\"");
+                                                
         return redirect()->action('StudentsController@classes');
     }
 }

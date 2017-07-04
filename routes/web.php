@@ -29,6 +29,8 @@ Route::get('/selectedClass/{classId}', 'StudentsController@selectedClass');
 
 Route::get('/editStudent/{studentsId}', 'StudentsController@selectedStudent');
 
+Route::get('/editClass/{classId}', 'StudentsController@editClass');
+
 Route::get('/newStudent', 'PagesController@newStudent');
 
 Route::get('/newClass', 'PagesController@newClass');
@@ -38,6 +40,12 @@ Route::post('/saveClass', array('uses'=>'StudentsController@createClass'));
 Route::post('/saveStudent', array('uses'=>'StudentsController@createStudent'));
 
 Route::post('/updateStudent', array('uses'=>'StudentsController@updateStudent'));
+
+Route::post('/updateClass', array('uses'=>'StudentsController@updateClass'));
+
+Route::get('/deleteStudent/{studentsId}', 'StudentsController@deleteStudent');
+
+Route::get('/deleteClass/{classId}', 'StudentsController@deleteClass');
 
 Auth::routes();
 
