@@ -35,4 +35,14 @@ class PagesController extends Controller
     {
         return view('auth.register');
     }
+
+    public function newStudent()
+    {
+        return view('pages.newStudent');
+    }
+
+    public function newClass()
+    {
+        return view('pages.newClass');
+    }
 }

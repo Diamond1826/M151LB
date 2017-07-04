@@ -5,8 +5,10 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading">Student's List</div>
-
+                <div class="panel-heading">
+                    Student's of {{ $className -> name }}
+                    <a class="btn btn-default btn-block" href="/classes">Back</a>
+                </div>
                 <div class="panel-body">
                     <div class="table-responsive">
                         <table class="table table-hover">
@@ -20,11 +22,18 @@
                                 <th>E-Mail</th>
                                 <th>Class ID</th>
                             </tr>
-                            <?php 
-                                foreach ($students as $student) {
-                                    echo '<tr class="clickable-row" data-href="/"><td>',$student->studentsId,'</td><td>',$student->firstname,'</td><td>',$student->lastname,'</td><td>',$student->street,'</td><td>',$student->plz,'</td><td>'.$student->city,'</td><td>',$student->email,'</td><td>',$student->name,'</td></tr>';
-                                }
-                            ?>
+                            @foreach ($students as $student)
+                                <tr class="clickable-row" data-href="/editStudent/{{ $student->studentsId }}">
+                                    <td>{{ $student->studentsId }}</td>
+                                    <td>{{ $student->firstname }}</td>
+                                    <td>{{ $student->lastname }}</td>
+                                    <td>{{ $student->street }}</td>
+                                    <td>{{ $student->plz }}</td>
+                                    <td>{{ $student->city }}</td>
+                                    <td>{{ $student->email }}</td>
+                                    <td>{{ $student->name }}</td>
+                                </tr>                          
+                            @endforeach
                         </table>
                     </div> 
                 </div>

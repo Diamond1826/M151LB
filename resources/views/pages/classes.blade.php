@@ -6,7 +6,7 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">Class List</div>
-
+                    <a class="btn btn-default btn-block" href="/newClass">New Class</a>
                 <div class="panel-body">
                     <div class="table-responsive">
                         <table class="table table-hover">
@@ -14,11 +14,12 @@
                                 <th>Class ID</th>
                                 <th>Classname</th>
                             </tr>
-                            <?php 
-                                foreach ($classes as $class) {
-                                    echo '<tr class="clickable-row" data-href="/"><td>',$class->classId,'</td><td>',$class->name,'</td></tr>';
-                                }
-                            ?>
+                            @foreach ($classes as $class)
+                                    <tr class="clickable-row" data-href="/selectedClass/{{ $class->classId }}">
+                                        <td>{{ $class->classId }}</td>
+                                        <td>{{ $class->name }}</td>
+                                    </tr>                                
+                            @endforeach
                         </table>
                     </div> 
                 </div>

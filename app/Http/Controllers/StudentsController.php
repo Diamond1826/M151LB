@@ -4,20 +4,119 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
+use App\Student;
+use App\Classes;
 
 class StudentsController extends Controller
 {
     public function index()
     {
-    	$students = DB::select('select students.studentsId, students.firstname, students.lastname, students.street, students.plz, students.city, students.email, classes.name from students, classes WHERE students.classId = classes.classId');
+    	$students = DB::select('SELECT students.studentsId, students.firstname, 
+                                students.lastname, students.street, 
+                                students.plz, students.city, 
+                                students.email, classes.name 
+                                from students, classes 
+                                WHERE students.classId = classes.classId');
 
     	return view('pages.students', ['students' => $students]);
     }
 
     public function classes()
     {
-    	$classes = DB::select('select * from classes');
+    	$classes = DB::select('SELECT * from classes');
 
     	return view('pages.classes', ['classes' => $classes]);
+    }
+
+    public function selectedClass($classId)
+    {
+        $students = DB::select("SELECT students.studentsId, students.firstname, 
+                                students.lastname, students.street, 
+                                students.plz, students.city, 
+                                students.email, classes.name 
+                                FROM students, classes 
+                                WHERE students.classId = classes.classId 
+                                AND students.classId = $classId");
+
+        $class = DB::select("SELECT name from classes where classId = $classId");
+
+        $className;
+
+        foreach ($class as $selectedClass) {
+            $className = $selectedClass;
+        }
+
+        return view('pages.selectedClass', ['students' => $students, 'className' => $className]);
+    }
+
+    public function selectedStudent($studentsId)
+    {
+        $students = DB::select("SELECT students.studentsId, students.firstname, 
+                                students.lastname, students.street, 
+                                students.plz, students.city, 
+                                students.email, students.classId, 
+                                classes.name 
+                                FROM students, classes 
+                                WHERE students.classId = classes.classId 
+                                AND students.studentsId = $studentsId");
+
+        $selectedStudent;
+
+        foreach ($students as $student) {
+            $selectedStudent = $student;   
+        }
+
+        return view('pages.editStudent', ['students' => $students, 'selectedStudent' => $selectedStudent]);
+    }  
+
+    public function createStudent(Request $request)
+    {
+        $student = new Student;
+    
+        $student->firstname = $request ->input('firstname');
+        $student->lastname = $request ->input('lastname');
+        $student->street = $request ->input('street');
+        $student->plz = $request ->input('plz');
+        $student->city = $request ->input('city');
+        $student->email = $request ->input('email');
+        $student->classId = $request ->input('classId');
+        $student->save();
+
+        return redirect()->action('StudentsController@index');
+    }
+
+    public function updateStudent(Request $request)
+    {
+        $studentsId = $request -> input('studentsId');
+        $classId = $request -> input('classId');
+        $firstname = $request -> input('firstname');
+        $lastname = $request -> input('lastname');
+        $email = $request -> input('email');
+        $street = $request -> input('street');
+        $plz = $request -> input('plz');
+        $city = $request -> input('city');
+
+
+    DB::select("UPDATE students SET classId = \"$classId\",
+                 firstname = \"$firstname\", 
+                 lastname = \"$lastname\", 
+                 email = \"$email\", 
+                 street = \"$street\", 
+                 plz = \"$plz\", 
+                 city = \"$city\" 
+                 WHERE studentsId = \"$studentsId\"");
+                                                
+        return redirect()->action('StudentsController@index');
+    }
+
+    public function createClass(Request $request)
+    {
+        $class = new Classes;
+    
+        $class->name = $request ->input('name');
+        $class->save();
+
+        return redirect()->action('StudentsController@classes');
     }
 }
