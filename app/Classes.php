@@ -12,10 +12,5 @@ class Classes extends Model
         'name', 
     ];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
     protected $table = 'classes';
 }
