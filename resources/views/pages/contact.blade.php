@@ -53,7 +53,6 @@
 <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBP9XGjwa6yemZn437vebzZK1HDk3l-Yok&callback=initMap">
 </script>
-
 @endif 
 @if(Auth::guest())
     <div class="row firstlog">

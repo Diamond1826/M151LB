@@ -1,5 +1,10 @@
 <?php
-
+/**
+* @author D. Schaufelberger
+* @since July, 2017
+* @version 1.0
+* this class managed all declarated routes
+*/
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,6 +40,10 @@ Route::get('/newStudent', 'PagesController@newStudent');
 
 Route::get('/newClass', 'PagesController@newClass');
 
+Route::get('/deleteStudent/{studentsId}', 'StudentsController@deleteStudent');
+
+Route::get('/deleteClass/{classId}', 'StudentsController@deleteClass');
+
 Route::post('/saveClass', array('uses'=>'StudentsController@createClass'));
 
 Route::post('/saveStudent', array('uses'=>'StudentsController@createStudent'));
@@ -42,10 +51,6 @@ Route::post('/saveStudent', array('uses'=>'StudentsController@createStudent'));
 Route::post('/updateStudent', array('uses'=>'StudentsController@updateStudent'));
 
 Route::post('/updateClass', array('uses'=>'StudentsController@updateClass'));
-
-Route::get('/deleteStudent/{studentsId}', 'StudentsController@deleteStudent');
-
-Route::get('/deleteClass/{classId}', 'StudentsController@deleteClass');
 
 Auth::routes();
 

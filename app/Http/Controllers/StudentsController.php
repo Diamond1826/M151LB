@@ -7,7 +7,12 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Student;
 use App\Classes;
-
+/**
+* @author D. Schaufelberger
+* @since July, 2017
+* @version 1.0
+* this class includ all student and classes methods
+*/
 class StudentsController extends Controller
 {
     public function index()

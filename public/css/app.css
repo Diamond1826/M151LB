@@ -18,6 +18,12 @@ body {
   margin: 0;
 }
 
+#map {
+  margin-top: 15px;
+  height: 350px;
+  width: 100%;
+}
+
 article,
 aside,
 details,
@@ -50,12 +56,6 @@ audio:not([controls]) {
 [hidden],
 template {
   display: none;
-}
-
-#map {
-  height: 350px;
-  width: 100%;
-  margin-top: 10px;
 }
 
 a {
@@ -6857,7 +6857,6 @@ button.list-group-item-danger.active:focus {
 }
 
 .panel-heading {
-  font-size: 22px;
   padding: 10px 15px;
   border-bottom: 1px solid transparent;
   border-top-right-radius: 3px;
@@ -6884,10 +6883,8 @@ button.list-group-item-danger.active:focus {
 }
 
 .panel-footer {
-  font-size: 22px;
   padding: 10px 15px;
-  background-color: white;
-  /*background-color: #f5f5f5;*/
+  background-color: #f5f5f5;
   border-top: 1px solid #d3e0e9;
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;

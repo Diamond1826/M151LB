@@ -3,7 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+/**
+* @author D. Schaufelberger
+* @since July, 2017
+* @version 1.0
+* this controller class manage the pages blades
+*/
 class PagesController extends Controller
 {
     /**
