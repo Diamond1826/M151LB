@@ -8350,3 +8350,26 @@ button.close {
   }
 }
 
+#map {
+  margin-top: 15px;
+  height: 350px;
+  width: 100%;
+}
+
+.panel-heading {
+  font-size: 20pt;
+}
+
+.panel-footer {
+  font-size: 16pt;
+  background-color: white;
+}
+
+#contactHeader {
+  font-size: 16pt;
+}
+
+#textLoggedIn {
+  font-size: 12pt;
+}
+

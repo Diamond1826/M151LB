@@ -8,7 +8,7 @@
                 <div class="panel-heading">Welcome to Students Overview</div>
 
                 <div class="panel-body">
-                    You are logged in!
+                    <span id="textLoggedIn">You are logged in!</span>
                 </div>
             </div>
         </div>
