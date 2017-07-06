@@ -11,8 +11,16 @@ use Illuminate\Database\Eloquent\Model;
 */
 class Student extends Model
 {
+    /**
+    * save no timestamps to the table
+    * @var $timestamps
+    */
     public $timestamps = false;
-    
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = [
         'firstname', 
         'lastname', 
@@ -22,6 +30,9 @@ class Student extends Model
         'email',
         'classId',
     ];
-
+    /**
+    * target table
+    * @var $table
+    */
     protected $table = 'students';
 }
