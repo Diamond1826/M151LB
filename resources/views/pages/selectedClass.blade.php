@@ -15,28 +15,32 @@
                 <div class="panel-body">
                     <div class="table-responsive">
                         <table class="table table-hover">
-                            <tr>
-                                <th>Student's ID</th>
-                                <th>Firstname</th>
-                                <th>Lastname</th>
-                                <th>Street</th>
-                                <th>PLZ</th>
-                                <th>City</th>
-                                <th>E-Mail</th>
-                                <th>Class</th>
-                            </tr>
-                            @foreach ($students as $student)
-                                <tr class="clickable-row" data-href="/editStudent/{{ $student->studentsId }}">
-                                    <td>{{ $student->studentsId }}</td>
-                                    <td>{{ $student->firstname }}</td>
-                                    <td>{{ $student->lastname }}</td>
-                                    <td>{{ $student->street }}</td>
-                                    <td>{{ $student->plz }}</td>
-                                    <td>{{ $student->city }}</td>
-                                    <td>{{ $student->email }}</td>
-                                    <td>{{ $student->name }}</td>
-                                </tr>                          
-                            @endforeach
+                            <thead>
+                                <tr>
+                                    <th>Student's ID</th>
+                                    <th>Firstname</th>
+                                    <th>Lastname</th>
+                                    <th>Street</th>
+                                    <th>PLZ</th>
+                                    <th>City</th>
+                                    <th>E-Mail</th>
+                                    <th>Class</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($students as $student)
+                                    <tr class="clickable-row" data-href="/editStudent/{{ $student->studentsId }}">
+                                        <td>{{ $student->studentsId }}</td>
+                                        <td>{{ $student->firstname }}</td>
+                                        <td>{{ $student->lastname }}</td>
+                                        <td>{{ $student->street }}</td>
+                                        <td>{{ $student->plz }}</td>
+                                        <td>{{ $student->city }}</td>
+                                        <td>{{ $student->email }}</td>
+                                        <td>{{ $student->name }}</td>
+                                    </tr>                          
+                                @endforeach
+                           </tbody> 
                         </table>
                     </div> 
                 </div>

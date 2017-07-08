@@ -10,16 +10,20 @@
                 <div class="panel-body">
                     <div class="table-responsive">
                         <table class="table table-responsive table-hover">
-                            <tr>
-                                <th>Class ID</th>
-                                <th>Classname</th>
-                            </tr>
-                            @foreach ($classes as $class)
-                                    <tr class="clickable-row" data-href="/selectedClass/{{ $class->classId }}">
-                                        <td>{{ $class->classId }}</td>
-                                        <td>{{ $class->name }}</td>
-                                    </tr>                                
-                            @endforeach
+                            <thead>
+                                <tr>
+                                    <th>Class ID</th>
+                                    <th>Classname</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($classes as $class)
+                                        <tr class="clickable-row" data-href="/selectedClass/{{ $class->classId }}">
+                                            <td>{{ $class->classId }}</td>
+                                            <td>{{ $class->name }}</td>
+                                        </tr>                                
+                                @endforeach
+                            </tbody>
                         </table>
                     </div> 
                 </div>
