@@ -8,5 +8,5 @@
 #
 #DATABASE
 #The Dump File on Datenbank_Dump folder must be imported to youre Database
-#default config in my project is user: root, password: 
+#default config in my project is DBName: m151LB, user: root, password: 
 
