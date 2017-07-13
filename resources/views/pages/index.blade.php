@@ -23,7 +23,7 @@
                 <div class="panel-heading">Welcome to Student's Overview</div>
 
                 <div class="panel-body">
-                    Login to use it!
+                    Log in to use it!
                 </div>
             </div>
         </div>

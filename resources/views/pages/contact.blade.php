@@ -10,12 +10,12 @@
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
-                                <span id="contactHeader">Contact Informations:</span>
+                                <span id="contactHeader">Contact Information:</span>
                             </thead>
                             <tbody>
                                 <tr>
                                     <th>Name:</th>
-                                    <td>Schafelberger Dimitrij</td>
+                                    <td>Schaufelberger Dimitrij</td>
                                 </tr>
                                 <tr>
                                     <th>Adress:</th>
